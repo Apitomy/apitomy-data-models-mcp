@@ -27,16 +27,16 @@
     ],
     "license": "Apache-2.0",
     "dependencies": {
-        "@apicurio/data-models": "2.5.2",
-        "@modelcontextprotocol/sdk": "1.27.1",
+        "@apicurio/data-models": "2.5.3",
+        "@modelcontextprotocol/sdk": "1.29.0",
         "js-yaml": "4.1.1",
-        "zod": "4.3.6"
+        "zod": "4.4.3"
     },
     "devDependencies": {
-        "@biomejs/biome": "2.4.6",
+        "@biomejs/biome": "2.4.15",
         "@types/js-yaml": "4.0.9",
-        "@types/node": "22.19.15",
+        "@types/node": "22.19.19",
         "typescript": "5.9.3",
-        "vitest": "4.0.18"
+        "vitest": "4.1.6"
     }
 }
