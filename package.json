@@ -1,6 +1,6 @@
 {
     "name": "@apitomy/data-models-mcp",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "MCP server wrapping @apitomy/data-models for AI-assisted OpenAPI and AsyncAPI editing",
     "type": "module",
     "main": "dist/index.js",
