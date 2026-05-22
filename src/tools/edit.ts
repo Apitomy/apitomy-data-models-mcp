@@ -2399,9 +2399,8 @@ export function registerEditTools(server: McpServer): void {
             const newRef = `#/components/schemas/${newName}`;
             let updatedJson = docJson.split(oldRef).join(newRef);
             // Also rename the schema key itself in the definitions/schemas map
-            updatedJson = updatedJson.replace(
-                `"${oldName}":{"`, `"${newName}":{"`,
-            );
+            updatedJson = updatedJson.replace(`"${oldName}":{"`, `"${newName}":{"`);
+
             const clearVisitor = new ClearNodeVisitor();
             doc.accept(clearVisitor);
             Library.readNode(JSON.parse(updatedJson), doc);
