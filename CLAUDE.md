@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is an MCP (Model Context Protocol) server that wraps the `@apicurio/data-models` library to
+This is an MCP (Model Context Protocol) server that wraps the `@apitomy/data-models` library to
 provide AI-assisted querying, editing, validation, and transformation of OpenAPI and AsyncAPI
 documents. It is a TypeScript project using the `@modelcontextprotocol/sdk`.
 
@@ -96,7 +96,7 @@ document to operate on.
 
 ## Visitor and Traverser Patterns (IMPORTANT)
 
-**Always use the Visitor and Traverser patterns from `@apicurio/data-models` as the primary
+**Always use the Visitor and Traverser patterns from `@apitomy/data-models` as the primary
 mechanism for querying, analyzing, transforming, and editing document models.** These patterns
 replace direct `instanceof` checks, `(doc as any)` casts, and manual tree walking.
 
@@ -106,7 +106,7 @@ replace direct `instanceof` checks, `(doc as any)` casts, and manual tree walkin
 import {
     Library, CombinedVisitorAdapter, TraverserDirection,
     Node, Document,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 // Traverse a subtree depth-first
 Library.visitTree(node, visitor, TraverserDirection.down);
@@ -187,7 +187,7 @@ Place new visitor classes in `src/visitors/` and export them from `src/visitors/
 
 ### Dependencies
 
-- `@apicurio/data-models` (v2.3.1) - Core document model library
+- `@apitomy/data-models` (v2.3.1) - Core document model library
 - `@modelcontextprotocol/sdk` - MCP server framework
 - `js-yaml` - YAML parsing/serialization
 - `zod` - Schema validation for tool parameters
@@ -197,5 +197,5 @@ Place new visitor classes in `src/visitors/` and export them from `src/visitors/
 The `.work/` directory (git-ignored) contains reference repositories that can be consulted for
 understanding the data-models library internals:
 
-- `.work/apicurio-data-models` - The data-models library source code (Java)
+- `.work/apitomy-data-models` - The data-models library source code (Java)
 - `.work/apicurio-openapi-editor` - An example consumer application showing visitor usage patterns

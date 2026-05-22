@@ -8,7 +8,7 @@ import {
     type OpenApiResponse,
     type Operation,
     type Schema,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 /**
  * Visitor that clears all properties from a node, preparing it for

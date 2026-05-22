@@ -1,6 +1,6 @@
 # MCP Tools Reference
 
-This document lists all 102 tools provided by the apicurio-data-models MCP server, organized
+This document lists all 102 tools provided by the apitomy-data-models MCP server, organized
 by category.
 
 ## Index

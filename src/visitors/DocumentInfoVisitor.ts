@@ -7,7 +7,7 @@ import {
     type OpenApi20Definitions,
     type OpenApiComponents,
     type OpenApiPaths,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 /**
  * Visitor that collects document-level metadata: title, description, version,

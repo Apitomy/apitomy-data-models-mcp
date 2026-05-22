@@ -13,7 +13,7 @@ import { registerValidationTools } from "./tools/validation.js";
  */
 export function createServer(): McpServer {
     const server = new McpServer({
-        name: "apicurio-data-models",
+        name: "apitomy-data-models",
         version: "0.1.0",
     });
 

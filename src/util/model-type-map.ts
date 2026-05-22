@@ -1,4 +1,4 @@
-import { ModelType as LibModelType } from "@apicurio/data-models";
+import { ModelType as LibModelType } from "@apitomy/data-models";
 
 /**
  * A human-friendly model type string that distinguishes between specific

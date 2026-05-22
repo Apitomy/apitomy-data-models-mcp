@@ -1,4 +1,4 @@
-import { CombinedVisitorAdapter, type Components } from "@apicurio/data-models";
+import { CombinedVisitorAdapter, type Components } from "@apitomy/data-models";
 
 /** Describes a single security scheme entry. */
 export interface SecuritySchemeEntry {

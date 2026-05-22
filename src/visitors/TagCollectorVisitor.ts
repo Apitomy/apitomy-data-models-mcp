@@ -1,4 +1,4 @@
-import { CombinedVisitorAdapter } from "@apicurio/data-models";
+import { CombinedVisitorAdapter } from "@apitomy/data-models";
 
 /** Describes a single tag entry. */
 export interface TagEntry {

@@ -58,7 +58,7 @@ import {
     type Server,
     type ServerVariable,
     type Tag,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 /**
  * Visitor that removes a node from its parent.

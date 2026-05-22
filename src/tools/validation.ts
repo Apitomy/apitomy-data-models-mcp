@@ -1,4 +1,4 @@
-import { Library, NodePath, ValidationProblemSeverity } from "@apicurio/data-models";
+import { Library, NodePath, ValidationProblemSeverity } from "@apitomy/data-models";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { sessionManager } from "../session-manager.js";

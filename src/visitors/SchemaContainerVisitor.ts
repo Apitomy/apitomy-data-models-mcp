@@ -3,7 +3,7 @@ import {
     type Components,
     type OpenApi20Definitions,
     type Schema,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 /**
  * Interface representing a container that can hold named schema definitions.

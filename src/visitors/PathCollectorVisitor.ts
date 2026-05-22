@@ -5,7 +5,7 @@ import {
     type MappedNode,
     type OpenApiPathItem,
     type OpenApiPaths,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 const HTTP_METHODS = ["get", "put", "post", "delete", "options", "head", "patch"] as const;
 

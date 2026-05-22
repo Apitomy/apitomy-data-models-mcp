@@ -4,9 +4,9 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
     resolve: {
         alias: {
-            "@apicurio/data-models": path.resolve(
+            "@apitomy/data-models": path.resolve(
                 __dirname,
-                "node_modules/@apicurio/data-models/dist/index.js",
+                "node_modules/@apitomy/data-models/dist/index.js",
             ),
         },
     },

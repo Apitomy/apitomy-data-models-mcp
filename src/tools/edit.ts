@@ -1,4 +1,4 @@
-import type { Document, ICommand, Node } from "@apicurio/data-models";
+import type { Document, ICommand, Node } from "@apitomy/data-models";
 import {
     AddExampleCommand,
     AddSecurityRequirementCommand,
@@ -9,7 +9,7 @@ import {
     ModelTypeUtil,
     NodePath,
     TraverserDirection,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
@@ -99,7 +99,7 @@ export function registerEditTools(server: McpServer): void {
 
             sessionManager.touchSession(session);
 
-            const info = doc.getInfo();
+            const info = (doc as any).getInfo();
             return successResult({
                 session,
                 info: {
@@ -2393,8 +2393,18 @@ export function registerEditTools(server: McpServer): void {
                 return errorResult("This operation is only supported for OpenAPI documents");
             }
 
-            const command = CommandFactory.createRenameSchemaDefinitionCommand(oldName, newName);
-            command.execute(doc);
+            // Rename: serialize doc, string-replace the schema name and all $ref pointers, deserialize
+            const docJson = JSON.stringify(Library.writeNode(doc));
+            const oldRef = `#/components/schemas/${oldName}`;
+            const newRef = `#/components/schemas/${newName}`;
+            let updatedJson = docJson.split(oldRef).join(newRef);
+            // Also rename the schema key itself in the definitions/schemas map
+            updatedJson = updatedJson.replace(
+                `"${oldName}":{"`, `"${newName}":{"`,
+            );
+            const clearVisitor = new ClearNodeVisitor();
+            doc.accept(clearVisitor);
+            Library.readNode(JSON.parse(updatedJson), doc);
 
             sessionManager.touchSession(session);
 

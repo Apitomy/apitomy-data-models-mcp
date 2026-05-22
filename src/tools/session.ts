@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { ModelType as LibModelType, Library } from "@apicurio/data-models";
+import { ModelType as LibModelType, Library } from "@apitomy/data-models";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { sessionManager } from "../session-manager.js";
@@ -87,8 +87,8 @@ export function registerSessionTools(server: McpServer): void {
             }
 
             if (title || version) {
-                const info = document.createInfo();
-                document.setInfo(info);
+                const info = (document as any).createInfo();
+                (document as any).setInfo(info);
                 if (title) {
                     info.setTitle(title);
                 }

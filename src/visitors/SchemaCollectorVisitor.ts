@@ -3,7 +3,7 @@ import {
     type Components,
     type OpenApi20Definitions,
     type OpenApiComponents,
-} from "@apicurio/data-models";
+} from "@apitomy/data-models";
 
 /**
  * Visitor that collects all schema/component definition names.

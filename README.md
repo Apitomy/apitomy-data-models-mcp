@@ -1,6 +1,6 @@
-# apicurio-data-models-mcp
+# apitomy-data-models-mcp
 
-An MCP (Model Context Protocol) server that wraps the `@apicurio/data-models` library, making it
+An MCP (Model Context Protocol) server that wraps the `@apitomy/data-models` library, making it
 easy for AI coding agents to query, validate, and edit OpenAPI and AsyncAPI documents.
 
 ## Supported Specifications
@@ -15,7 +15,7 @@ easy for AI coding agents to query, validate, and edit OpenAPI and AsyncAPI docu
 ### Install from npm
 
 ```bash
-npm install -g @apicurio/data-models-mcp
+npm install -g @apitomy/data-models-mcp
 ```
 
 ### Configure in Claude Code
@@ -23,7 +23,7 @@ npm install -g @apicurio/data-models-mcp
 The easiest way is to use the `claude mcp add` command:
 
 ```bash
-claude mcp add apicurio-data-models apicurio-data-models-mcp
+claude mcp add apitomy-data-models apitomy-data-models-mcp
 ```
 
 ## Tool Catalog

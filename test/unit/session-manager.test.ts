@@ -1,4 +1,4 @@
-import { ModelType as LibModelType, Library } from "@apicurio/data-models";
+import { ModelType as LibModelType, Library } from "@apitomy/data-models";
 import { beforeEach, describe, expect, it } from "vitest";
 import { type SessionEntry, SessionManager } from "../../src/session-manager.js";
 

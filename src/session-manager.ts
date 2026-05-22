@@ -1,4 +1,4 @@
-import type { Document, ModelType as LibModelType } from "@apicurio/data-models";
+import type { Document, ModelType as LibModelType } from "@apitomy/data-models";
 import type { DocumentFormat } from "./util/format.js";
 
 /**

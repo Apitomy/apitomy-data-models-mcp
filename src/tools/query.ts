@@ -1,4 +1,4 @@
-import { Library, ModelTypeUtil, NodePath, TraverserDirection } from "@apicurio/data-models";
+import { Library, ModelTypeUtil, NodePath, TraverserDirection } from "@apitomy/data-models";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { sessionManager } from "../session-manager.js";

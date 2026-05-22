@@ -16,7 +16,7 @@ But first, read this page (including the small print at the end).
 
 ## Legal
 
-All original contributions to Apicurio projects are licensed under the
+All original contributions to Apitomy projects are licensed under the
 [ASL - Apache License](https://www.apache.org/licenses/LICENSE-2.0),
 version 2.0 or later, or, if another license is specified as governing the file or directory
 being modified, such other license.
@@ -65,7 +65,7 @@ We may use this information to acknowledge your contributions!
 ### Code Reviews
 
 All submissions, including submissions by project members, need to be reviewed by at least one
-Apicurio committer before being merged.
+Apitomy committer before being merged.
 
 [GitHub Pull Request Review Process](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
 is followed for every pull request.
@@ -73,7 +73,7 @@ is followed for every pull request.
 ### Coding Guidelines
 
 * We primarily use the Git history to track authorship. GitHub also has
-  [this nice page with your contributions](https://github.com/Apicurio/apicurio-data-models-mcp/graphs/contributors).
+  [this nice page with your contributions](https://github.com/Apitomy/apitomy-data-models-mcp/graphs/contributors).
 * Please take care to write code that fits with existing code styles. This project uses
   [Biome](https://biomejs.dev/) for linting and formatting (see `biome.json`).
 * Use TypeScript strict mode conventions: explicit types, JSDoc on public functions, and
