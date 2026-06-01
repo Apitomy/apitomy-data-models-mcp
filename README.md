@@ -1,4 +1,4 @@
-# apitomy-data-models-mcp
+# Apitomy Data Models MCP
 
 An MCP (Model Context Protocol) server that wraps the `@apitomy/data-models` library, making it
 easy for AI coding agents to query, validate, and edit OpenAPI and AsyncAPI documents.
@@ -7,6 +7,7 @@ easy for AI coding agents to query, validate, and edit OpenAPI and AsyncAPI docu
 
 - OpenAPI 2.0 (Swagger)
 - OpenAPI 3.0.x
+- OpenAPI 3.1.x
 - AsyncAPI 2.x
 - AsyncAPI 3.x
 
@@ -79,4 +80,20 @@ npm install          # Install dependencies
 npm run build        # Compile TypeScript
 npm test             # Run tests
 npm run test:watch   # Run tests in watch mode
+npm run lint         # Run linter
 ```
+
+## Links
+
+- [Documentation](https://www.apitomy.io/projects/data-models-mcp/docs/)
+- [npm Package](https://www.npmjs.com/package/@apitomy/data-models-mcp)
+- [GitHub Repository](https://github.com/Apitomy/apitomy-data-models-mcp)
+- [Apitomy Website](https://www.apitomy.io)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
