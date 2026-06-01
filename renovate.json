@@ -1,7 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "config:recommended"
+        "config:recommended",
+        "group:monorepos",
+        "group:recommended"
     ],
     "enabledManagers": [
         "npm"
@@ -10,29 +12,14 @@
     "rangeStrategy": "bump",
     "ignorePaths": [
     ],
-    "prConcurrentLimit": 5,
+    "prConcurrentLimit": 10,
     "prHourlyLimit": 5,
     "packageRules": [
         {
-            "groupName": "Dependencies: Typescript",
-            "matchFileNames": [
-                "package.json"
-            ],
-            "enabled": true,
-            "matchUpdateTypes": [
-                "patch", "minor"
-            ]
-        },
-        {
-            "groupName": "Dependencies: Typescript (Major)",
-            "matchFileNames": [
-                "package.json"
-            ],
-            "enabled": true,
-            "matchUpdateTypes": [
-                "major"
-            ],
-            "schedule": [ "* 0 1 * *" ]
+            "description": "Group all major updates into a single monthly PR",
+            "matchUpdateTypes": ["major"],
+            "groupName": "all major dependencies",
+            "schedule": ["on the first day of the month"]
         }
     ]
 }
