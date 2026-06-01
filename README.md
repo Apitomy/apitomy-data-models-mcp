@@ -1,3 +1,5 @@
+[![Verify Build Workflow](https://github.com/Apitomy/apitomy-data-models-mcp/actions/workflows/verify.yaml/badge.svg)](https://github.com/Apitomy/apitomy-data-models-mcp/actions/workflows/verify.yaml?query=branch%3Amain)
+
 # Apitomy Data Models MCP
 
 An MCP (Model Context Protocol) server that wraps the `@apitomy/data-models` library, making it
