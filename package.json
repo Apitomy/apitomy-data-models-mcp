@@ -27,7 +27,7 @@
     ],
     "license": "Apache-2.0",
     "dependencies": {
-        "@apitomy/data-models": "3.1.0",
+        "@apitomy/data-models": "3.1.1",
         "@modelcontextprotocol/sdk": "1.29.0",
         "js-yaml": "4.2.0",
         "zod": "4.4.3"
