@@ -5,10 +5,18 @@ on:
       release-version:
         description: 'Release version to publish (e.g., 1.1.0)'
         required: true
+      branch:
+        description: 'Branch/tag to publish from'
+        required: true
+        default: 'main'
   workflow_call:
     inputs:
       release-version:
         description: 'Release version to publish'
+        required: true
+        type: string
+      branch:
+        description: 'Branch/tag to publish from'
         required: true
         type: string
 
@@ -21,23 +29,34 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'Apitomy'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 24.18.0
           registry-url: 'https://registry.npmjs.org'
 
 
-      - name: Update npm
-        run: npm install -g npm@latest
-
-
       - name: Log Metadata
         run: |
-          echo "Publishing Apitomy Data Models MCP version ${{ inputs.release-version }} to npm"
+          echo "Publishing Apitomy Data Models MCP version $RELEASE_VERSION to NPM"
+          echo "Publishing from branch/tag: $BRANCH"
+        env:
+          RELEASE_VERSION: ${{ inputs.release-version }}
+          BRANCH: ${{ inputs.branch }}
+
+
+      - name: Code Checkout
+        run: |
+          git init
+          git config user.name "apitomy-ci"
+          git config user.email "apitomy.ci@gmail.com"
+          git remote add origin "https://apitomy-ci:${ACCESS_TOKEN}@github.com/$GITHUB_REPOSITORY.git"
+          git fetch
+          git checkout "$BRANCH"
+        env:
+          BRANCH: ${{ inputs.branch }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 
       - name: Build and Test
@@ -47,8 +66,10 @@ jobs:
           npm test
 
 
-      - name: Publish to npm
+      - name: Publish to NPM
         run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ''
 
 
       - name: Slack Notification (Always)
