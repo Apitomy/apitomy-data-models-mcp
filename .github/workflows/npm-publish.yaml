@@ -39,20 +39,24 @@ jobs:
 
       - name: Log Metadata
         run: |
-          echo "Publishing Apitomy Data Models MCP version ${{ inputs.release-version }} to NPM"
-          echo "Publishing from branch/tag: ${{ inputs.branch }}"
+          echo "Publishing Apitomy Data Models MCP version $RELEASE_VERSION to NPM"
+          echo "Publishing from branch/tag: $BRANCH"
+        env:
+          RELEASE_VERSION: ${{ inputs.release-version }}
+          BRANCH: ${{ inputs.branch }}
 
 
       - name: Code Checkout
         run: |
           git init
-          git config --global user.name "apitomy-ci"
-          git config --global user.email "apitomy.ci@gmail.com"
-          git remote add origin "https://apitomy-ci:${{ secrets.ACCESS_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config user.name "apitomy-ci"
+          git config user.email "apitomy.ci@gmail.com"
+          git remote add origin "https://apitomy-ci:${ACCESS_TOKEN}@github.com/$GITHUB_REPOSITORY.git"
           git fetch
-          git checkout ${{ inputs.branch }}
-          echo "#### Listing files after checkout ####"
-          find .
+          git checkout "$BRANCH"
+        env:
+          BRANCH: ${{ inputs.branch }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 
       - name: Build and Test
